@@ -15,7 +15,7 @@ typedef void(^LYFTableViewAction)(void);
 @interface LYFTableView : UITableView
 
 /// 控制器
-@property (nonatomic, strong) ViewController *viewController;
+@property (nonatomic, weak) ViewController *viewController;
 /// 滑动事件
 @property (nonatomic, copy) LYFTableViewAction scrollAction;
 

@@ -94,14 +94,15 @@ static NSString *tableViewHeaderView = @"LYFTableViewHeaderView";
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     LYFTableViewHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:tableViewHeaderView];
     
+    __weak typeof(self) weakSelf = self;
     header.clickAction = ^(NSInteger index) {
         switch (index) {
             case 1: {
-                [self.collectionView setContentOffset:CGPointMake(0, 0) animated:YES];
+                [weakSelf.collectionView setContentOffset:CGPointMake(0, 0) animated:YES];
                 break;
             }
             default: {
-                [self.collectionView setContentOffset:CGPointMake(kScreenWidth, 0) animated:YES];
+                [weakSelf.collectionView setContentOffset:CGPointMake(kScreenWidth, 0) animated:YES];
                 break;
             }
         }

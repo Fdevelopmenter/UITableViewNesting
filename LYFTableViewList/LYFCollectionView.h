@@ -15,7 +15,7 @@ typedef void(^LYFCollectionViewAction)(CGFloat proportion);
 @interface LYFCollectionView : UICollectionView
 
 /// 控制器
-@property (nonatomic, strong) ViewController *viewController;
+@property (nonatomic, weak) ViewController *viewController;
 /// 横向偏移比例
 @property (nonatomic, copy) LYFCollectionViewAction scrollAction;
 
